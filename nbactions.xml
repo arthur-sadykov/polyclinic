@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+    <action>
+        <actionName>CUSTOM-Execute SQL</actionName>
+        <displayName>Execute SQL</displayName>
+        <goals>
+            <goal>sql:execute</goal>
+        </goals>
+    </action>
+    <action>
+        <actionName>CUSTOM-Jetty Run</actionName>
+        <displayName>Jetty Run</displayName>
+        <goals>
+            <goal>jetty:run</goal>
+        </goals>
+    </action>
+</actions>

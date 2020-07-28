@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright 2020 Arthur Sadykov.
+
+Тестовое задание Haulmont.
+Cистема ввода и отображения информации о рецептах поликлиники.
+-->
+<persistence version="2.2" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <persistence-unit name="polyclinic" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <class>com.haulmont.polyclinic.dto.Patient</class>
+    <class>com.haulmont.polyclinic.dto.Recipe</class>
+    <class>com.haulmont.polyclinic.dto.Doctor</class>
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:file:db/polyclinic;shutdown=true"/>
+      <property name="javax.persistence.jdbc.user" value="SA"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="polyclinicTest" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <class>com.haulmont.polyclinic.dto.Patient</class>
+    <class>com.haulmont.polyclinic.dto.Recipe</class>
+    <class>com.haulmont.polyclinic.dto.Doctor</class>
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:file:db/polyclinic/test;shutdown=true"/>
+      <property name="javax.persistence.jdbc.user" value="SA"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+    </properties>
+  </persistence-unit>
+</persistence>

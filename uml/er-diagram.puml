@@ -1,0 +1,68 @@
+/'
+    ER-диаграмма
+'/
+@startuml
+
+hide circle
+skinparam linetype ortho
+
+/'
+    Сущность "Пациент"
+'/
+entity Patient {
+    'идентификатор пациента (первичный ключ)
+    *patient_id : Long <<generated>>
+    --
+    'имя
+    *first_name : String
+    'фамилия
+    *last_name : String
+    'отчество
+    patronymic : String
+    'номер телефона
+    *phone_number : String
+}
+
+/'
+    Сущность "Врач"
+'/
+entity Doctor {
+    'идентификатор врача (первичный ключ)
+    *doctor_id : Long <<generated>>
+    --
+    'имя
+    *first_name : String
+    'фамилия
+    *last_name : String
+    'отчество
+    patronymic : String
+    'специализация
+    *specialization : String
+}
+
+/'
+    Сущность "Рецепт"
+'/
+entity Recipe {
+    'идентификатор рецепта (первичный ключ)
+    *recipe_id : Long <<generated>>
+    --
+    'описание
+    *description : String
+    'идентификатор пациента (внешний ключ)
+    *patient_id : Long <<FK>>
+    'идентификатор врача (внешний ключ)
+    *doctor_id : Long <<FK>>
+    'дата создания
+    *creation_date : LocalDate
+    'срок действия
+    *validity_period : Integer
+    'приоритет
+    *priority : Priority
+}
+
+
+Recipe }o..|| Doctor
+Recipe }o..|| Patient
+
+@enduml

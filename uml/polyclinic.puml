@@ -1,0 +1,69 @@
+@startuml
+'left to right direction
+skinparam linetype ortho
+class com.haulmont.polyclinic.dao.DAOFactory
+class com.haulmont.polyclinic.dao.impl.DoctorDAOImpl
+class com.haulmont.polyclinic.dao.impl.PatientDAOImpl
+class com.haulmont.polyclinic.dao.impl.RecipeDAOImpl
+class com.haulmont.polyclinic.dto.Doctor
+class com.haulmont.polyclinic.dto.Patient
+class com.haulmont.polyclinic.dto.Recipe
+class com.haulmont.polyclinic.dto.Recipe.Priority
+class com.haulmont.polyclinic.ui.MainUI
+class com.haulmont.polyclinic.ui.window.DoctorStatisticWindow
+class com.haulmont.polyclinic.ui.window.DoctorWindow
+class com.haulmont.polyclinic.ui.window.PatientWindow
+class com.haulmont.polyclinic.ui.window.RecipeWindow
+interface com.haulmont.polyclinic.dao.DAO
+interface com.haulmont.polyclinic.dao.DoctorDAO
+interface com.haulmont.polyclinic.dao.RecipeDAO
+interface com.haulmont.polyclinic.dto.Entity
+interface com.haulmont.polyclinic.util.SaveListener
+com.haulmont.polyclinic.dao.DAOFactory ..> com.haulmont.polyclinic.dao.impl.DoctorDAOImpl
+com.haulmont.polyclinic.dao.DAOFactory ..> com.haulmont.polyclinic.dao.impl.PatientDAOImpl
+com.haulmont.polyclinic.dao.DAOFactory ..> com.haulmont.polyclinic.dao.impl.RecipeDAOImpl
+com.haulmont.polyclinic.dao.DAOFactory ..> com.haulmont.polyclinic.dto.Patient
+com.haulmont.polyclinic.dao.impl.DoctorDAOImpl ..> com.haulmont.polyclinic.dto.Doctor
+com.haulmont.polyclinic.dao.impl.DoctorDAOImpl --|> com.haulmont.polyclinic.dao.DoctorDAO
+com.haulmont.polyclinic.dao.impl.PatientDAOImpl ..> com.haulmont.polyclinic.dto.Patient
+com.haulmont.polyclinic.dao.impl.PatientDAOImpl --|> com.haulmont.polyclinic.dao.DAO
+com.haulmont.polyclinic.dao.impl.RecipeDAOImpl ..> com.haulmont.polyclinic.dto.Recipe
+com.haulmont.polyclinic.dao.impl.RecipeDAOImpl --|> com.haulmont.polyclinic.dao.RecipeDAO
+com.haulmont.polyclinic.dto.Doctor --|> com.haulmont.polyclinic.dto.Entity
+com.haulmont.polyclinic.dto.Patient --|> com.haulmont.polyclinic.dto.Entity
+com.haulmont.polyclinic.dto.Recipe --|> com.haulmont.polyclinic.dto.Entity
+com.haulmont.polyclinic.ui.MainUI ..> com.haulmont.polyclinic.dao.DAOFactory
+com.haulmont.polyclinic.ui.MainUI ..> com.haulmont.polyclinic.dto.Doctor
+com.haulmont.polyclinic.ui.MainUI ..> com.haulmont.polyclinic.dto.Patient
+com.haulmont.polyclinic.ui.MainUI ..> com.haulmont.polyclinic.dto.Recipe
+com.haulmont.polyclinic.ui.MainUI ..> com.haulmont.polyclinic.dto.Recipe.Priority
+com.haulmont.polyclinic.ui.MainUI ..> com.haulmont.polyclinic.ui.window.DoctorStatisticWindow
+com.haulmont.polyclinic.ui.MainUI ..> com.haulmont.polyclinic.ui.window.DoctorWindow
+com.haulmont.polyclinic.ui.MainUI ..> com.haulmont.polyclinic.ui.window.PatientWindow
+com.haulmont.polyclinic.ui.MainUI ..> com.haulmont.polyclinic.ui.window.RecipeWindow
+com.haulmont.polyclinic.ui.MainUI ..> com.haulmont.polyclinic.dao.DAO
+com.haulmont.polyclinic.ui.MainUI ..> com.haulmont.polyclinic.dao.RecipeDAO
+com.haulmont.polyclinic.ui.window.DoctorStatisticWindow ..> com.haulmont.polyclinic.dao.DAOFactory
+com.haulmont.polyclinic.ui.window.DoctorStatisticWindow ..> com.haulmont.polyclinic.dto.Doctor
+com.haulmont.polyclinic.ui.window.DoctorStatisticWindow ..> com.haulmont.polyclinic.dao.DoctorDAO
+com.haulmont.polyclinic.ui.window.DoctorWindow ..> com.haulmont.polyclinic.dao.DAOFactory
+com.haulmont.polyclinic.ui.window.DoctorWindow ..> com.haulmont.polyclinic.dto.Doctor
+com.haulmont.polyclinic.ui.window.DoctorWindow ..> com.haulmont.polyclinic.dao.DAO
+com.haulmont.polyclinic.ui.window.DoctorWindow ..> com.haulmont.polyclinic.util.SaveListener
+com.haulmont.polyclinic.ui.window.PatientWindow ..> com.haulmont.polyclinic.dao.DAOFactory
+com.haulmont.polyclinic.ui.window.PatientWindow ..> com.haulmont.polyclinic.dto.Patient
+com.haulmont.polyclinic.ui.window.PatientWindow ..> com.haulmont.polyclinic.dao.DAO
+com.haulmont.polyclinic.ui.window.PatientWindow ..> com.haulmont.polyclinic.util.SaveListener
+com.haulmont.polyclinic.ui.window.RecipeWindow ..> com.haulmont.polyclinic.dao.DAOFactory
+com.haulmont.polyclinic.ui.window.RecipeWindow ..> com.haulmont.polyclinic.dto.Doctor
+com.haulmont.polyclinic.ui.window.RecipeWindow ..> com.haulmont.polyclinic.dto.Patient
+com.haulmont.polyclinic.ui.window.RecipeWindow ..> com.haulmont.polyclinic.dto.Recipe
+com.haulmont.polyclinic.ui.window.RecipeWindow ..> com.haulmont.polyclinic.dao.DAO
+com.haulmont.polyclinic.ui.window.RecipeWindow ..> com.haulmont.polyclinic.dao.RecipeDAO
+com.haulmont.polyclinic.ui.window.RecipeWindow ..> com.haulmont.polyclinic.util.SaveListener
+com.haulmont.polyclinic.dao.DoctorDAO ..> com.haulmont.polyclinic.dto.Doctor
+com.haulmont.polyclinic.dao.DoctorDAO --|> com.haulmont.polyclinic.dao.DAO
+com.haulmont.polyclinic.dao.RecipeDAO ..> com.haulmont.polyclinic.dto.Recipe
+com.haulmont.polyclinic.dao.RecipeDAO --|> com.haulmont.polyclinic.dao.DAO
+com.haulmont.polyclinic.util.SaveListener ..> com.haulmont.polyclinic.dto.Entity
+@enduml

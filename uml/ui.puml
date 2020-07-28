@@ -1,0 +1,11 @@
+@startuml
+class com.haulmont.polyclinic.ui.MainUI
+class com.haulmont.polyclinic.ui.window.DoctorStatisticWindow
+class com.haulmont.polyclinic.ui.window.DoctorWindow
+class com.haulmont.polyclinic.ui.window.PatientWindow
+class com.haulmont.polyclinic.ui.window.RecipeWindow
+com.haulmont.polyclinic.ui.MainUI ..> com.haulmont.polyclinic.ui.window.DoctorStatisticWindow
+com.haulmont.polyclinic.ui.MainUI ..> com.haulmont.polyclinic.ui.window.DoctorWindow
+com.haulmont.polyclinic.ui.MainUI ..> com.haulmont.polyclinic.ui.window.PatientWindow
+com.haulmont.polyclinic.ui.MainUI ..> com.haulmont.polyclinic.ui.window.RecipeWindow
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+skinparam linetype ortho
+class com.haulmont.polyclinic.dao.DAOFactory
+class com.haulmont.polyclinic.dao.impl.DoctorDAOImpl
+class com.haulmont.polyclinic.dao.impl.PatientDAOImpl
+class com.haulmont.polyclinic.dao.impl.RecipeDAOImpl
+interface com.haulmont.polyclinic.dao.DAO
+interface com.haulmont.polyclinic.dao.DoctorDAO
+interface com.haulmont.polyclinic.dao.RecipeDAO
+com.haulmont.polyclinic.dao.DAOFactory ..> com.haulmont.polyclinic.dao.impl.DoctorDAOImpl
+com.haulmont.polyclinic.dao.DAOFactory ..> com.haulmont.polyclinic.dao.impl.PatientDAOImpl
+com.haulmont.polyclinic.dao.DAOFactory ..> com.haulmont.polyclinic.dao.impl.RecipeDAOImpl
+com.haulmont.polyclinic.dao.impl.DoctorDAOImpl --|> com.haulmont.polyclinic.dao.DoctorDAO
+com.haulmont.polyclinic.dao.impl.PatientDAOImpl --|> com.haulmont.polyclinic.dao.DAO
+com.haulmont.polyclinic.dao.impl.RecipeDAOImpl --|> com.haulmont.polyclinic.dao.RecipeDAO
+com.haulmont.polyclinic.dao.DoctorDAO --|> com.haulmont.polyclinic.dao.DAO
+com.haulmont.polyclinic.dao.RecipeDAO --|> com.haulmont.polyclinic.dao.DAO
+@enduml

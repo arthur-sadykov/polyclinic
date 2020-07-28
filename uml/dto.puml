@@ -1,0 +1,9 @@
+@startuml
+class com.haulmont.polyclinic.dto.Doctor
+class com.haulmont.polyclinic.dto.Patient
+class com.haulmont.polyclinic.dto.Recipe
+interface com.haulmont.polyclinic.dto.Entity
+com.haulmont.polyclinic.dto.Doctor --|> com.haulmont.polyclinic.dto.Entity
+com.haulmont.polyclinic.dto.Patient --|> com.haulmont.polyclinic.dto.Entity
+com.haulmont.polyclinic.dto.Recipe --|> com.haulmont.polyclinic.dto.Entity
+@enduml
